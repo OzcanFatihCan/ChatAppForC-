@@ -25,6 +25,8 @@ namespace DataAccessLayer
             {
                 EntityMessageReceiver msg = new EntityMessageReceiver();
                 msg.Icerik = dr["ICERIK"].ToString();
+                msg.Gonderen = int.Parse(dr["GONDEREN"].ToString());
+                msg.Baslik = dr["BASLIK"].ToString();
                 Mesajlar.Add(msg);
             }
             dr.Close();
@@ -45,10 +47,27 @@ namespace DataAccessLayer
             {
                 EntityMessageSender msg = new EntityMessageSender();
                 msg.Icerik = dr["ICERIK"].ToString();
+                msg.Alici = int.Parse(dr["ALICI"].ToString());
+                msg.Baslik = dr["BASLIK"].ToString();
                 Mesajlar.Add(msg);
             }
             dr.Close();
             return Mesajlar;
+        }
+
+        public static int MesajGonder(EntityMessage ent)
+        {
+            SqlCommand komut2 = new SqlCommand("INSERT INTO TBLMESAJLAR (ALICI,BASLIK,ICERIK,GONDEREN) VALUES (@P1,@P2,@P3,@P4)",Baglanti.conn);
+            if (komut2.Connection.State != ConnectionState.Open)
+            {
+                komut2.Connection.Open();
+            }
+            komut2.Parameters.AddWithValue("@P1",ent.Alici);
+            komut2.Parameters.AddWithValue("@P2", ent.Baslik);
+            komut2.Parameters.AddWithValue("@P3", ent.Icerik);
+            komut2.Parameters.AddWithValue("@P4", ent.Gonderen);
+
+            return komut2.ExecuteNonQuery();
         }
     }
 }

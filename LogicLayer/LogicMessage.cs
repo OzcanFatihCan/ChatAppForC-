@@ -33,5 +33,20 @@ namespace LogicLayer
                 return null;
             }
         }
+        
+        public static int LLMesajGonder(EntityMessage ent)
+        {
+            if (ent.Icerik!="" &&
+               ent.Baslik!="" &&
+                !string.IsNullOrEmpty(ent.Alici.ToString())&&
+                !string.IsNullOrEmpty(ent.Gonderen.ToString()))
+            {
+                return DALMessage.MesajGonder(ent);
+            }
+            else
+            {
+                return -1;
+            }
+        }
     }
 }

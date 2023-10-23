@@ -51,5 +51,35 @@ namespace ChatApp
             GelenKutusu(UyeNo);
             GidenKutusu(UyeNo);
         }
+
+        private void BtnGonder_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(MskAlici.Text,out int alici))
+            {
+                EntityMessage ent = new EntityMessage();
+                ent.Alici = alici;
+                ent.Icerik = RchMesaj.Text;
+                ent.Baslik = TxtBaslik.Text;
+                ent.Gonderen = UyeNo;
+                int result = LogicMessage.LLMesajGonder(ent);
+                if (result>0)
+                {
+                    MessageBox.Show("Mesaj gönderildi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GidenKutusu(UyeNo);
+                }
+                else if (result == 0)
+                {
+                    MessageBox.Show("Gönderim sırasında bir hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Hücreleri boş bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Boş hücre bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
