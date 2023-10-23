@@ -33,5 +33,25 @@ namespace DataAccessLayer
 
             return UyeGirisi;
         }
+        public static List<EntityPerson> UyeGetir(int No)
+        {
+            List<EntityPerson> UyeBilgileri = new List<EntityPerson>();
+            SqlCommand komut2 = new SqlCommand("Select AD,SOYAD From TBLKISILER Where NUMARA=@p1", Baglanti.conn);
+            if (komut2.Connection.State != ConnectionState.Open)
+            {
+                komut2.Connection.Open();
+            }
+            komut2.Parameters.AddWithValue("@p1", No);
+            SqlDataReader dr1 = komut2.ExecuteReader();
+            while (dr1.Read())
+            {
+                EntityPerson ent=new EntityPerson();
+                ent.Ad = dr1["AD"].ToString();
+                ent.Soyad = dr1["SOYAD"].ToString();
+                UyeBilgileri.Add(ent);
+            }
+            dr1.Close();
+            return UyeBilgileri;
+        }
     }
 }

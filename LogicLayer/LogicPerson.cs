@@ -22,5 +22,17 @@ namespace LogicLayer
                 return null;
             }
         }
+
+        public static List<EntityPerson> LLBilgiGetr(int No)
+        {
+            if (!string.IsNullOrEmpty(No.ToString()))
+            {
+                return DALPerson.UyeGetir(No);
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
