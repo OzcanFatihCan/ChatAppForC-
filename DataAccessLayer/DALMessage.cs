@@ -14,7 +14,7 @@ namespace DataAccessLayer
         public static List<EntityMessageReceiver> MesajGetir(int alici)
         {
             List<EntityMessageReceiver> Mesajlar=new List<EntityMessageReceiver>();
-            SqlCommand komut = new SqlCommand("Select * From TBLMESAJLAR Where ALICI=@p1", Baglanti.conn);
+            SqlCommand komut = new SqlCommand("SELECT (AD+' '+SOYAD) AS 'GELEN',ICERIK,BASLIK From TBLMESAJLAR INNER JOIN TBLKISILER ON TBLMESAJLAR.GONDEREN=TBLKISILER.NUMARA WHERE ALICI=@p1", Baglanti.conn);
             if (komut.Connection.State != ConnectionState.Open)
             {
                 komut.Connection.Open();
@@ -25,7 +25,7 @@ namespace DataAccessLayer
             {
                 EntityMessageReceiver msg = new EntityMessageReceiver();
                 msg.Icerik = dr["ICERIK"].ToString();
-                msg.Gonderen = int.Parse(dr["GONDEREN"].ToString());
+                msg.Gonderen = dr["GELEN"].ToString();
                 msg.Baslik = dr["BASLIK"].ToString();
                 Mesajlar.Add(msg);
             }
@@ -36,7 +36,7 @@ namespace DataAccessLayer
         public static List<EntityMessageSender> MesajGiden(int Gonderen)
         {
             List<EntityMessageSender> Mesajlar = new List<EntityMessageSender>();
-            SqlCommand komut = new SqlCommand("Select * From TBLMESAJLAR Where GONDEREN=@p1", Baglanti.conn);
+            SqlCommand komut = new SqlCommand("SELECT (AD+' '+SOYAD) AS 'GIDEN',ICERIK,BASLIK From TBLMESAJLAR INNER JOIN TBLKISILER ON TBLMESAJLAR.ALICI=TBLKISILER.NUMARA WHERE GONDEREN=@p1", Baglanti.conn);
             if (komut.Connection.State != ConnectionState.Open)
             {
                 komut.Connection.Open();
@@ -47,7 +47,7 @@ namespace DataAccessLayer
             {
                 EntityMessageSender msg = new EntityMessageSender();
                 msg.Icerik = dr["ICERIK"].ToString();
-                msg.Alici = int.Parse(dr["ALICI"].ToString());
+                msg.Alici = dr["GIDEN"].ToString();
                 msg.Baslik = dr["BASLIK"].ToString();
                 Mesajlar.Add(msg);
             }

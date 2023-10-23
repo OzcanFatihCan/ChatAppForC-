@@ -8,11 +8,11 @@ namespace EntityLayer
 {
     public class EntityMessageReceiver
     {       
-        private int gonderen;    
+        private string gonderen;    
         private string baslik;
         private string icerik;
    
-        public int Gonderen { get => gonderen; set => gonderen = value; }      
+        public string Gonderen { get => gonderen; set => gonderen = value; }      
         public string Baslik { get => baslik; set => baslik = value; }
         public string Icerik { get => icerik; set => icerik = value; }
     }
