@@ -14,10 +14,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ChatApp
 {
-    public partial class GirisForm : Form
+    public partial class LoginForm : Form
     {
         
-        public GirisForm()
+        public LoginForm()
         {
             InitializeComponent();
            
@@ -67,7 +67,7 @@ namespace ChatApp
                 List<EntityPerson> KullaniciGetir = LogicPerson.LLGirisYap(LgnNo, TxtLgnSif.Text);
                 if (KullaniciGetir != null && KullaniciGetir.Count > 0)
                 {
-                    MesajForm frm = new MesajForm();
+                    MessageForm frm = new MessageForm();
                     frm.UyeNo = LgnNo;
                     frm.Show();
                     this.Hide();

@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace ChatApp
 {
-    public partial class MesajForm : Form
+    public partial class MessageForm : Form
     {
         public int UyeNo;
-        public MesajForm()
+        public MessageForm()
         {
             InitializeComponent();          
         }
@@ -25,6 +25,17 @@ namespace ChatApp
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        void GelenKutusu(int Alici)
+        {
+            List<EntityMessageReceiver> Mesaj = LogicMessage.LLMesajGetir(Alici);
+            dataGridView1.DataSource= Mesaj;
+        }
+        void GidenKutusu(int Gonderen)
+        {
+            List<EntityMessageSender> Mesaj = LogicMessage.LLMesajGiden(Gonderen);
+            dataGridView2.DataSource = Mesaj;
         }
 
         private void MesajForm_Load(object sender, EventArgs e)
@@ -37,6 +48,8 @@ namespace ChatApp
             {
                 LblAdSoyad.Text = item.Ad + " " + item.Soyad;
             }
+            GelenKutusu(UyeNo);
+            GidenKutusu(UyeNo);
         }
     }
 }
