@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntityLayer;
+using LogicLayer;
 using MaterialSkin.Controls;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace ChatApp
 {
     public partial class GirisForm : Form
@@ -54,6 +58,30 @@ namespace ChatApp
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void BtnGiris_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(MskLgnNo.Text, out int LgnNo))
+            {
+                List<EntityPerson> KullaniciGetir = LogicPerson.LLGirisYap(LgnNo, TxtLgnSif.Text);
+                if (KullaniciGetir != null && KullaniciGetir.Count > 0)
+                {
+                    MesajForm frm = new MesajForm();
+                    frm.UyeNo = LgnNo;
+                    frm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Hatalı kullanıcı girişi yaptınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hatalı kullanıcı girişi yaptınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

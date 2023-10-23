@@ -11,3 +11,9 @@ D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\obj\Debug\ChatApp.exe
 D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\obj\Debug\ChatApp.pdb
 D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\obj\Debug\ChatApp.GirisForm.resources
 D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\obj\Debug\ChatApp.MesajForm.resources
+D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\bin\Debug\DataAccessLayer.dll
+D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\bin\Debug\EntityLayer.dll
+D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\bin\Debug\LogicLayer.dll
+D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\bin\Debug\DataAccessLayer.pdb
+D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\bin\Debug\EntityLayer.pdb
+D:\Projeler\C#Projeler\GitProje\ChatApp\ChatApp\bin\Debug\LogicLayer.pdb

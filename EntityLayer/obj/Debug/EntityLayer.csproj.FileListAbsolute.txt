@@ -1,0 +1,6 @@
+D:\Projeler\C#Projeler\GitProje\ChatApp\EntityLayer\bin\Debug\EntityLayer.dll
+D:\Projeler\C#Projeler\GitProje\ChatApp\EntityLayer\bin\Debug\EntityLayer.pdb
+D:\Projeler\C#Projeler\GitProje\ChatApp\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+D:\Projeler\C#Projeler\GitProje\ChatApp\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+D:\Projeler\C#Projeler\GitProje\ChatApp\EntityLayer\obj\Debug\EntityLayer.dll
+D:\Projeler\C#Projeler\GitProje\ChatApp\EntityLayer\obj\Debug\EntityLayer.pdb

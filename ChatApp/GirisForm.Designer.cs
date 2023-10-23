@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LblRegister = new System.Windows.Forms.Label();
             this.BtnGiris = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.pnlorta = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -186,7 +186,7 @@
             this.TxtLgnSif.Location = new System.Drawing.Point(67, 220);
             this.TxtLgnSif.Name = "TxtLgnSif";
             this.TxtLgnSif.Size = new System.Drawing.Size(164, 26);
-            this.TxtLgnSif.TabIndex = 1;
+            this.TxtLgnSif.TabIndex = 2;
             this.TxtLgnSif.UseSystemPasswordChar = true;
             // 
             // label1
@@ -225,6 +225,18 @@
             this.panel1.Size = new System.Drawing.Size(300, 400);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(261, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 31);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // LblRegister
             // 
             this.LblRegister.AutoSize = true;
@@ -247,6 +259,7 @@
             this.BtnGiris.TabIndex = 6;
             this.BtnGiris.Text = "Giriş Yap";
             this.BtnGiris.UseVisualStyleBackColor = true;
+            this.BtnGiris.Click += new System.EventHandler(this.BtnGiris_Click);
             // 
             // label2
             // 
@@ -263,7 +276,7 @@
             this.MskLgnNo.Mask = "0000";
             this.MskLgnNo.Name = "MskLgnNo";
             this.MskLgnNo.Size = new System.Drawing.Size(164, 26);
-            this.MskLgnNo.TabIndex = 4;
+            this.MskLgnNo.TabIndex = 1;
             this.MskLgnNo.ValidatingType = typeof(int);
             // 
             // pnlorta
@@ -284,18 +297,6 @@
             // 
             this.timer2.Interval = 5;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(261, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // GirisForm
             // 

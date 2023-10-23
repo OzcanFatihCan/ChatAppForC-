@@ -14,11 +14,20 @@ namespace ChatApp
 {
     public partial class MesajForm : Form
     {
-        
+        public int UyeNo;
         public MesajForm()
         {
-            InitializeComponent();
-          
+            InitializeComponent();          
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MesajForm_Load(object sender, EventArgs e)
+        {
+            LblNumara.Text = Convert.ToString(UyeNo);
         }
     }
 }
