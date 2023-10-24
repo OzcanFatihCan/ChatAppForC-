@@ -53,5 +53,20 @@ namespace DataAccessLayer
             dr1.Close();
             return UyeBilgileri;
         }
+
+        public static int KayitOl(EntityPerson ent)
+        {
+            SqlCommand komut3 = new SqlCommand("INSERT INTO TBLKISILER (AD,SOYAD,NUMARA,SIFRE) VALUES (@P1,@P2,@P3,@P4)",Baglanti.conn);
+            if (komut3.Connection.State != ConnectionState.Open)
+            {
+                komut3.Connection.Open();
+            }
+            komut3.Parameters.AddWithValue("@P1",ent.Ad);
+            komut3.Parameters.AddWithValue("@P2", ent.Soyad);
+            komut3.Parameters.AddWithValue("@P3", ent.Numara);
+            komut3.Parameters.AddWithValue("@P4", ent.Sifre);
+            return komut3.ExecuteNonQuery();
+
+        }
     }
 }

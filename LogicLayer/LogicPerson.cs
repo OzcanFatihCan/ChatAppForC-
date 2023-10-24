@@ -34,5 +34,20 @@ namespace LogicLayer
                 return null;
             }
         }
+
+       public static int LLKayitol(EntityPerson ent)
+        {
+            if (!string.IsNullOrEmpty(ent.Numara.ToString()) &&
+                ent.Ad != "" &&
+                ent.Soyad != "" &&
+                ent.Sifre != "")
+            {
+                return DALPerson.KayitOl(ent);
+            }
+            else
+            {
+                return -1;
+            }
+        }
     }
 }

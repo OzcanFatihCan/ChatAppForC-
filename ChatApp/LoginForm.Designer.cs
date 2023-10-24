@@ -135,6 +135,7 @@
             this.BtnKayit.TabIndex = 11;
             this.BtnKayit.Text = "Kayıt Ol";
             this.BtnKayit.UseVisualStyleBackColor = true;
+            this.BtnKayit.Click += new System.EventHandler(this.BtnKayit_Click);
             // 
             // label3
             // 
@@ -298,7 +299,7 @@
             this.timer2.Interval = 5;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // GirisForm
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -313,7 +314,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
-            this.Name = "GirisForm";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);

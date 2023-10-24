@@ -83,5 +83,35 @@ namespace ChatApp
             }
 
         }
+
+        private void BtnKayit_Click(object sender, EventArgs e)
+        {
+            EntityPerson ent = new EntityPerson();
+            if (int.TryParse(MskRgsNo.Text,out int Kayitno))
+            {
+                ent.Ad = TxtRgsAd.Text;
+                ent.Soyad = TxtRgsSoyad.Text;
+                ent.Sifre = TxtRgsSif.Text;
+                ent.Numara = Kayitno;
+                int result=LogicPerson.LLKayitol(ent);
+                if (result>0)
+                {
+                    MessageBox.Show("Kaydınız oluşturuldu", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (result==0)
+                {
+                    MessageBox.Show("Kayıt sırasında bir hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Boş hücre bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Boş hücre bırakmayınız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
