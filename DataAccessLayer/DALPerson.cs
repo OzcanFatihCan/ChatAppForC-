@@ -68,5 +68,23 @@ namespace DataAccessLayer
             return komut3.ExecuteNonQuery();
 
         }
+        public static List<EntityPerson> NumaraGetir()
+        {
+            List<EntityPerson> Numaralar=new List<EntityPerson>();
+            SqlCommand komut4 = new SqlCommand("SELECT NUMARA FROM TBLKISILER",Baglanti.conn);
+            if (komut4.Connection.State != ConnectionState.Open)
+            {
+                komut4.Connection.Open();
+            }
+            SqlDataReader dr2=komut4.ExecuteReader();
+            while (dr2.Read())
+            {
+                EntityPerson ent = new EntityPerson();
+                ent.Numara = int.Parse(dr2["NUMARA"].ToString());
+                Numaralar.Add(ent);
+            }
+            dr2.Close();
+            return Numaralar;
+        }
     }
 }

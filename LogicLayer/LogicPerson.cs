@@ -23,7 +23,7 @@ namespace LogicLayer
             }
         }
 
-        public static List<EntityPerson> LLBilgiGetr(int No)
+        public static List<EntityPerson> LLUyeGetir(int No)
         {
             if (!string.IsNullOrEmpty(No.ToString()))
             {
@@ -48,6 +48,10 @@ namespace LogicLayer
             {
                 return -1;
             }
+        }
+        public static List<EntityPerson> LLNumaraGetir()
+        {
+            return DALPerson.NumaraGetir();
         }
     }
 }
